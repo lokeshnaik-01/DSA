@@ -11,4 +11,9 @@
 -              |    |
 -              v    v
 -              5--->6
-- 
+
+
+## Dijkstra's
+- it is not applicable for graphs with negative edge weight
+- consider 0--------->1 node weight(-2) it will keep on going for ever and will fall in an infinite loop
+- Time Complexity is ElogV ---> E is total no of edges,  is no of nodes
