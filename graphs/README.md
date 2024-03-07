@@ -21,13 +21,23 @@
 - if we used priority_queue unnecessary iterations will be removed by traversing only the minimal first
 - time complexity
 `O(v*(pop vertex from min heap+no of edges on each vertex*push into min heap))
+
 O(V*(log(heap size)+ne*log(heap size)))
+
 O(V*(log(heap size)*(ne+1)))
+
 ne can be v-1 in case of condesned graph which is all the nodes are connected
+
 O(V*log(heap size)*(V-1+1))
+
 O(V^2*log(heap size))
+
 heap size can be (V^2) in extreme case
+
 O(V^2*log(V^2))
+
 V^2 = E total edges
+
 O(2*Elog(V))
+
 O(ElogV)`
