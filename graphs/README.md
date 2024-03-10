@@ -83,11 +83,25 @@ O(ElogV)
   2. Size (Union by Size)
 
 ### Rank
-- assig a rank array and parent array assign rank array to be 0
+- assign a rank array and parent array assign rank array to be 0
 - parent node will be parent of itself
+- TC is O(4*alpha) alpha~=1 so constant time
 ```
-- Union(u,v)
+Union(u,v)
   1. find ultimate parent of u & v---> pu, pv
   2. find rank of pu and pv
   3. connect smaller rank to larger rank always
+
+FindParent(u,v)
+  1. We need to get the ultimate parents
+  2. if both have different ultimate parents then we say they are in different components
+  3. it will take O(log(N)) time but we do path compression which will reduce the time to O(1)
+  4. rank is not reduced
+
+func PathCompression(u) {
+    if(u==parent[u]) {
+        return u;
+    }
+    return path[u] = findParent(parent[u]);
+}
 ```
