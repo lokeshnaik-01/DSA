@@ -42,3 +42,12 @@ V^2 = E total edges
 `O(2*Elog(V))`
 
 `O(ElogV)`
+
+## Bellman Ford
+- bellman ford helps us to detect negative cycles.
+- it is only for directed graph. if it is asked for a undirected graph change it to directed by having two side edges with same wright
+- Steps
+  1. relax all edges n-1 times sequentially n is the number of nodes
+  2. `if(dist[u]+edjWt) < dist[v]` same as dijkstra and update `dist[v]` this is called relaxation of edges 
+  3. the loop runs for n-1 times because n-1 is the maximum length of a shortest path in a graph with N vertices  1-->2--->3--->4 in this case we need 3 iterations
+  4. on nth iteration the distance array will be done, if at nth iteration still there is a decrease in distance we can say there is a loop
