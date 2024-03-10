@@ -117,7 +117,7 @@ func PathCompression(u) {
 ```
 1. Sort all edges according to weight
 2. take each edge and weight and find the UltimateParent
-  1. if they belong to different components then consider the edge
-  2. if they belong to same component then do not consider the edge
+  i. if they belong to different components then consider the edge
+  ii. if they belong to same component then do not consider the edge
 3. The resultant weight is MST
 ```
