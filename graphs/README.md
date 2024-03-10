@@ -109,3 +109,15 @@ func PathCompression(u) {
 ### Size
 - Union by Size
 - Create a new size array
+
+## Kruskals Algorithm
+- Used to find MST. Disjoint Sets will be used to find MST
+- TC is O(M) + O(MlogM) MlogM for sorting (M is edges)
+- Steps
+```
+1. Sort all edges according to weight
+2. take each edge and weight and find the UltimateParent
+  1. if they belong to different components then consider the edge
+  2. if they belong to same component then do not consider the edge
+3. The resultant weight is MST
+```
