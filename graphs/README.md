@@ -105,3 +105,7 @@ func PathCompression(u) {
     return path[u] = findParent(parent[u]);
 }
 ```
+
+### Size
+- Union by Size
+- Create a new size array
