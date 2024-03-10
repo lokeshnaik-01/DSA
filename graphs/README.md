@@ -8,11 +8,12 @@
 ## Cycle detection in graphs
 - for detecting cycle in undirected and directed graph is different.
 - consider here there is no cycle but if we use dfs algo which checks the parent as in undirected graph it says cycle detected
--          1-->2--->3-->4
--              |    |
--              v    v
--              5--->6
-
+```
+         1-->2--->3-->4
+             |    |
+             v    v
+             5--->6
+```
 
 ## Dijkstra's
 - it is not applicable for graphs with negative edge weight
@@ -21,27 +22,29 @@
 - if queue is used all the paths are passed
 - if we used priority_queue unnecessary iterations will be removed by traversing only the minimal first
 - time complexity
-`O(v*(pop vertex from min heap+no of edges on each vertex*push into min heap))`
+```
+O(v*(pop vertex from min heap+no of edges on each vertex*push into min heap))
 
-`O(V*(log(heap size)+ne*log(heap size)))`
+O(V*(log(heap size)+ne*log(heap size)))
 
-`O(V*(log(heap size)*(ne+1)))`
+O(V*(log(heap size)*(ne+1)))
 
 ne can be v-1 in case of condesned graph which is all the nodes are connected
 
-`O(V*log(heap size)*(V-1+1))`
+O(V*log(heap size)*(V-1+1))
 
-`O(V^2*log(heap size))`
+O(V^2*log(heap size))
 
 heap size can be (V^2) in extreme case
 
-`O(V^2*log(V^2))`
+O(V^2*log(V^2))
 
 V^2 = E total edges
 
-`O(2*Elog(V))`
+O(2*Elog(V))
 
-`O(ElogV)`
+O(ElogV)
+```
 
 ## Bellman Ford
 - bellman ford helps us to detect negative cycles.
@@ -57,3 +60,34 @@ V^2 = E total edges
 - We use adjacency matrix which will store the cost from one path to another it is called as cost matrix
 - cost[u][v] via k --> cost[u][k] + cost[k][v]
 - we do the above for all parts via every node
+
+## Spanning Tree
+- a tree in which we have n nodes and n-1 edges and all nodes are reachable from each other is called Spanning tree
+## MST
+- tree with minimum sum is called spanning tree
+
+## Prim's algo
+- We will have a priority_queue and a visited array
+  1. start with some node and and push it into priority_queue (node, 0, parent(-1)) and mark it as vis
+  2. push adjacent nodes into the priority_queue
+  3. repeat 1 and 2
+
+## Disjoint Sets
+- used in dynamic graphs which change constantly
+- will tell us if two nodes belong to same component or not.
+- it will be done in constant time instead of the linear time complexity using dfs and bfs
+- `findParent` and `Union` are the two functions
+- union in disjoint set connect two nodes
+- Union can be implemented using two ways
+  1. Rank (Union by Rank)
+  2. Size (Union by Size)
+
+### Rank
+- assig a rank array and parent array assign rank array to be 0
+- parent node will be parent of itself
+```
+- Union(u,v)
+  1. find ultimate parent of u & v---> pu, pv
+  2. find rank of pu and pv
+  3. connect smaller rank to larger rank always
+```
